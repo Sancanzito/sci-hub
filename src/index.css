@@ -1,5 +1,15 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #030712;
+@import "tailwindcss";
+
+@theme {
+  /* This maps your custom variable to a Tailwind utility name */
+  --color-dark-bg: #030712;
+}
+
+/* Explicitly define the dark variant to look at the root .dark class */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply m-0 p-0 transition-colors duration-200;
+  }
 }
